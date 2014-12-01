@@ -1,0 +1,11 @@
+<div class='border-form-div'>
+  <h2>Edit Movie</h2>
+	<%= form_for(@movie) do |f| %>
+	<%= render 'shared/error_messages', object: f.object %>
+	  <%= f.label :title %></br>
+	  <%= f.text_field :title %></br>
+	  <%= f.label :description %></br>
+	  <%= f.text_field :description%></br>
+	  <div><%= f.submit "Change", class: "btn btn-large btn-primary"%></div>
+	<% end %>
+</div>

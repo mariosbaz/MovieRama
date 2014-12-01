@@ -1,0 +1,163 @@
+// Place all the styles related to the Movies controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "bootstrap";
+@import "bootstrap-sprockets";
+
+#movie_container{
+	border: 1px solid black;
+  margin-bottom:20px;
+}
+
+body {
+  color: #000;
+  margin:0 auto;
+  margin-top:0;
+  text-align: center;
+  margin-left:15px; 
+  word-wrap: break-word;
+}
+
+/*universal css*/
+
+html {
+  overflow-y: scroll;
+}
+
+textarea {  
+  resize: vertical;
+}
+
+a:link { 
+  color: black;
+  text-color:black;
+}
+
+a:hover { 
+  color: black;
+}
+
+section {
+  overflow: auto;
+}  
+
+.navbar-header{
+  margin-right: 0;
+  margin-left: 0;
+  float:left;
+}
+
+.navbar-static-top{
+  border-bottom: 2px solid rgb(10, 75, 95);
+  margin-bottom:20px;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: black;
+}
+
+.navbar-nav.navbar-right:last-child{
+  margin-right:20px;
+}
+
+.navbar-nav > li > a {
+  padding-top: 15px;
+}
+
+.navbar-inner {
+  margin-left:10px;
+	padding-top:20px;
+}
+
+.navbar-default{
+  margin-bottom:20px;
+}
+
+/*styling some containers*/
+
+.border-form-div {
+  max-width: 400px;
+  padding: 19px 29px 29px;
+  margin: 0 auto 20px;
+  margin-top:20px;
+  background: rgb(233,234,237);
+  border: 1px solid black;
+}
+
+.border-form-div .form-signin-heading,
+.border-form-div{
+  margin-bottom: 10px;
+}
+
+.border-form-div input[type="text"],
+.border-form-div input[type="email"],
+.border-form-div input[type="password"] {
+  font-size: 16px;
+  margin-bottom: 15px;
+  padding: 7px 9px;
+} 
+
+p, ol, ul {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 15px;
+  line-height: 18px;
+}
+
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+#notice {
+  color: green;
+}
+
+/*styling devise error messages*/
+
+.field_with_errors {
+  padding: 1px;
+  input {
+   border: 2px solid red
+  };
+  text-align:center;
+}
+
+#error_explanation { 
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+  h2 {
+    text-align: center;
+    font-weight: bold;
+    padding: 5px 5px 5px 15px;
+    font-size: 12px;
+    margin: -7px;
+    margin-bottom: 0px;
+    background-color: #c00;
+    color: #fff;
+  }
+  ul li {
+    font-size: 12px;
+    list-style: square;
+  }
+} 
+
+.alert {
+  margin-top:-20px;
+  position:relative;
+  padding:10px;
+}
+
+#movie{
+  border-radius: 25px;
+  background-color:green;
+}
+
+#sort_row{
+  background-color:rgb(217,217,217);
+  font-size: 14px;
+  margin-bottom:20px;
+}
