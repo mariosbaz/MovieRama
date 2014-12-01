@@ -19,19 +19,7 @@ describe MoviesController do
         get :new
         expect(response).to render_template :new
       end
-    end
-
-    describe 'GET #show' do
-      it "assigns the requested movie to @movie" do
-        get :show, id: @movie
-        expect(assigns(:movie)).to eq @movie
-      end
-
-      it "renders the :show template" do
-        get :show, id: @movie
-        expect(response).to render_template :show
-      end
-    end
+    end   
 
     describe 'GET #index' do 
       it "populates an array of all movies" do
@@ -60,7 +48,6 @@ describe MoviesController do
     end
 
     describe 'POST #create' do
-
       context "with valid attributes" do
         it "saves the new movie in the database" do
           expect{ 
@@ -89,7 +76,6 @@ describe MoviesController do
     end
 
     describe 'PATCH #update' do
-
       context "valid attributes" do
         it "locates the requested @movie" do
           patch :update, id: @movie, movie: attributes_for(:movie)
@@ -128,7 +114,6 @@ describe MoviesController do
     end
 
     describe 'DELETE #destroy' do   
-
       context "valid attributes" do 
         it "deletes the movie" do
           expect{ delete :destroy, id: @movie
@@ -161,7 +146,7 @@ describe MoviesController do
   end
 
   describe 'guests' do    
-    # GET #index and GET #show examples are the same as for authenticated users
+    # GET #index  examples are the same as for authenticated users
     describe 'GET #new' do
       it 'requires login' do
         get :new

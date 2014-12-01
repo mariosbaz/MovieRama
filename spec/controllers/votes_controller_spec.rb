@@ -12,7 +12,6 @@ describe VotesController do
     end
 
     describe "POST #create" do
-
       context "with valid attributes" do
         it "saves the vote value in the database" do
           expect{
@@ -44,7 +43,6 @@ describe VotesController do
     end
 
     describe "DELETE #destroy" do 
-
       it "deletes the vote" do 
         expect{ delete :destroy, id: @like_vote 
           }.to change(Vote, :count).by(-1)
