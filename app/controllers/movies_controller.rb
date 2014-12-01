@@ -9,6 +9,7 @@ class MoviesController < ApplicationController
 
   def index  
     @filter = params[:id]
+    # @filter option to sort by date,likes or hates for a specific user
     if @filter 
       @movies = Movie.where(user_id: @filter ).order(
         sort_column + " " + sort_direction).paginate(page: params[:page])
@@ -22,12 +23,12 @@ class MoviesController < ApplicationController
     if @movie.user_id == current_user.id
       if @movie.update_attributes(movie_params)
         flash[:success] = "Movie Updated"
-        redirect_to @movie        
+        redirect_to root_path       
       else 
         render "edit"
       end
     else
-      redirect_to @movie        
+      redirect_to root_path      
     end
   end
 
@@ -55,12 +56,14 @@ class MoviesController < ApplicationController
 
   def movie_params
     params.require(:movie).permit(:title, :description)
-  end  
-  
+  end    
+
+  #defaults sorting by created_at or sorts by likes or hates  if passed otherwise 
   def sort_column
     Movie.column_names.include?(params[:sort]) ? params[:sort] : "created_at"
   end
   
+  #defaults direction to asc or desc if passed otherwise
   def sort_direction
     %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
   end
